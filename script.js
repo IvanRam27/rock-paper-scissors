@@ -9,6 +9,7 @@ let playerSelection
 let playerScore = 0
 let computerScore = 0
 let scoreMessage
+let round = 0
 
 function getComputerChoice() {
     let randomNumber = Math.random();
@@ -23,6 +24,8 @@ function getComputerChoice() {
 
 function playRound (playerSelection) {
     computerSelection = getComputerChoice()
+
+    round += 1
 
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
 
@@ -46,47 +49,25 @@ function playRound (playerSelection) {
 
     if (playerSelection == "scissors" && computerSelection == "rock")
     return("You Lose! Rock beats Scissors.")
-
-
-    }
-
-    return ("Please enter rock, paper or scissors.")
-   
+    }   
 }
 
-function game() {
-    for(let i = 1; i <= 5; i++){
-        //playerSelection = prompt("Welcome to Rock, Paper & Scissors!", "Choose")
-        //computerSelection = getComputerChoice()
- 	    scoreMessage =playRound(playerSelection, computerSelection)
-  
-        if(scoreMessage.substr(4,3) === "Win") {
-            playerScore += 1
-            console.log("Round " + i + ": " + scoreMessage + " Score is " + playerScore + "-" + computerScore)
-        }
-  
-        if(scoreMessage.substr(4,4) === "Lose") {
-            computerScore += 1
-            console.log("Round " + i  + ": " + scoreMessage + " Score is " + playerScore + "-" + computerScore)
-        }
-  
-        if(scoreMessage.substr(7,3) === "Tie") {
-            console.log("Round " + i  + ": " + scoreMessage + " Score is " + playerScore + "-" + computerScore)
-        }
-	
-        if(scoreMessage.substr(4,1) === "s") {
-            console.log(scoreMessage)
-            i -= 1
-        }
+function gameScore(scoreMessage) {
+
+
+    if(scoreMessage.substr(4,3) === "Win") {
+        playerScore += 1
+        return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
     }
-    if (playerScore > computerScore)
-    return "You Win the Game!"
- 
-    if(computerScore > playerScore)
-    return "You Lose the Game!"
- 
-    return "The Game is a tie!"
- 
+  
+    if(scoreMessage.substr(4,4) === "Lose") {
+        computerScore += 1
+        return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
+    }
+  
+    if(scoreMessage.substr(7,3) === "Tie") {
+        return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
+    }
 }
 
 // buttons is a node list. It looks and acts much like an array.
@@ -97,6 +78,25 @@ buttons.forEach((button) => {
     button.addEventListener('click', function() {
         const result = document.querySelector('#result')
         result.textContent = playRound(button.id)
+        const scoreStatus = document.querySelector('#scoreStatus')
+        scoreStatus.textContent = gameScore(result.textContent)
+        if (round === 5) {
+            if(playerScore > computerScore)
+            scoreStatus.textContent = "You Win the Game! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+    
+            if(playerScore < computerScore)
+            scoreStatus.textContent = "You Lose the Game! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+            
+            if(playerScore == computerScore)
+            scoreStatus.textContent = "Game ends in a Tie! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+
+            round = 0
+            playerScore = 0
+            computerScore = 0
+        }
         
     });
 });
+
+
+
