@@ -21,8 +21,8 @@ function getComputerChoice() {
     return "scissors"
 }
 
-function playRound (playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase()
+function playRound (playerSelection) {
+    computerSelection = getComputerChoice()
 
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
 
@@ -56,8 +56,8 @@ function playRound (playerSelection, computerSelection) {
 
 function game() {
     for(let i = 1; i <= 5; i++){
-        playerSelection = prompt("Welcome to Rock, Paper & Scissors!", "Choose")
-        computerSelection = getComputerChoice()
+        //playerSelection = prompt("Welcome to Rock, Paper & Scissors!", "Choose")
+        //computerSelection = getComputerChoice()
  	    scoreMessage =playRound(playerSelection, computerSelection)
   
         if(scoreMessage.substr(4,3) === "Win") {
@@ -89,4 +89,14 @@ function game() {
  
 }
 
-console.log(game())
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+  // and for each one we add a 'click' listener, and a function to play a round based on button selection    
+    button.addEventListener('click', function() {
+        const result = document.querySelector('#result')
+        result.textContent = playRound(button.id)
+        
+    });
+});
