@@ -30,42 +30,42 @@ function playRound (playerSelection) {
     if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
 
     if (playerSelection === computerSelection)
-    return ("It's a Tie!")
+    return ("It's a tie!")
 
     if (playerSelection == "rock" && computerSelection == "scissors")
-    return("You Win! Rock beats Scissors.")
+    return("You win! Rock beats Scissors.")
 
     if (playerSelection == "rock" && computerSelection == "paper")
-    return("You Lose! Paper beats Rock.")
+    return("You lose! Paper beats Rock.")
 
     if (playerSelection == "paper" && computerSelection == "rock")
-    return("You Win! Paper beats Rock.")
+    return("You win! Paper beats Rock.")
 
     if (playerSelection == "paper" && computerSelection == "scissors")
-    return("You Lose! Scissors beats Paper.")
+    return("You lose! Scissors beats Paper.")
 
     if (playerSelection == "scissors" && computerSelection == "paper")
-    return("You Win! Scissors beats Paper.")
+    return("You win! Scissors beats Paper.")
 
     if (playerSelection == "scissors" && computerSelection == "rock")
-    return("You Lose! Rock beats Scissors.")
+    return("You lose! Rock beats Scissors.")
     }   
 }
 
 function gameScore(scoreMessage) {
 
 
-    if(scoreMessage.substr(4,3) === "Win") {
+    if(scoreMessage.substr(4,3) === "win") {
         playerScore += 1
         return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
     }
   
-    if(scoreMessage.substr(4,4) === "Lose") {
+    if(scoreMessage.substr(4,4) === "lose") {
         computerScore += 1
         return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
     }
   
-    if(scoreMessage.substr(7,3) === "Tie") {
+    if(scoreMessage.substr(7,3) === "tie") {
         return("Round " + round + ": " + " Score is " + playerScore + "-" + computerScore)
     }
 }
@@ -82,13 +82,13 @@ buttons.forEach((button) => {
         scoreStatus.textContent = gameScore(result.textContent)
         if (round === 5) {
             if(playerScore > computerScore)
-            scoreStatus.textContent = "You Win the Game! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+            scoreStatus.textContent = "You win the game! The final score is " + playerScore + "-" + computerScore + ". Click a button to play again"
     
             if(playerScore < computerScore)
-            scoreStatus.textContent = "You Lose the Game! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+            scoreStatus.textContent = "You lose the game! The final score is " + playerScore + "-" + computerScore + ". Click a button to play again"
             
             if(playerScore == computerScore)
-            scoreStatus.textContent = "Game ends in a Tie! The Final Score is " + playerScore + "-" + computerScore + ". Click a Button to Play Again"
+            scoreStatus.textContent = "Game ends in a tie! The final score is " + playerScore + "-" + computerScore + ". Click a button to play again"
 
             round = 0
             playerScore = 0

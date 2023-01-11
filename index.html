@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Welcome to Rock, Paper, Scissors!</h1>
-    <button id = "rock">Rock</button>
-    <button id = "paper">Paper</button>
-    <button id = "scissors">Scissors</button>
+<div class= "content">
+    <div class = "left-content">
+    <h3>Click to Choose. Best of 5 Rounds Wins!</h3>
+    <button id = "rock"><img src="icons/rock.png" width="200" height="180"></button>
+    <button id = "paper"><img src="icons/paper.png" width="200" height="180"></button>
+    <button id = "scissors"><img src = "icons/scissors.png" width="200" height="180"></button>
+    </div>
+    <div class = "right-content">
+    <h3>Computer Choice:</h3>    
+    <div id="computerChoice"></div>
+    </div>
+</div>
+
     <div id="result">Click a Button to Begin!</div>
     <div id="scoreStatus">Score is 0 - 0</div>
 </body>

@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    align-items: center;
+    
+}
+
+h1 {
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    padding: 30px;
+    padding-left: auto;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+
+.content {
+    background-color: cornsilk;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    padding: 50px;
+    
+}
+
+.left-content {
+    margin-right: 200px;
+}
+
+
+button {
+    background-color: whitesmoke;
+    height: 250px;
+    width: 250px;
+    border-radius: 15px;
+    margin: 5px;
+    
+}
+
+#computerChoice {
+    background-color: whitesmoke;
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 15px;
+
+  
+}
