@@ -13,12 +13,17 @@ let round = 0
 
 function getComputerChoice() {
     let randomNumber = Math.random();
-    if (randomNumber >= 0 && randomNumber < 0.33)
-    return "rock"
-    
-    if (randomNumber >= 0.33 && randomNumber < 0.66)
-    return "paper"
+    if (randomNumber >= 0 && randomNumber < 0.33){
+        document.getElementById("imgid").src="icons/rock.png";    
+        return "rock"
+    }
 
+    if (randomNumber >= 0.33 && randomNumber < 0.66){
+        document.getElementById("imgid").src="icons/paper.png"
+        return "paper"
+    }
+
+    document.getElementById("imgid").src="icons/scissors.png"
     return "scissors"
 }
 
