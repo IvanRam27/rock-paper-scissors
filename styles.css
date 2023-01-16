@@ -18,7 +18,7 @@ h1 {
 
 
 .content {
-    background-color: cornsilk;
+    background-color: whitesmoke;
     display: flex;
     justify-content:center;
     text-align: center;
@@ -40,7 +40,7 @@ button {
     
 }
 
-#computerChoice {
+#imgid {
     background-color: whitesmoke;
     height: 250px;
     width: 250px;

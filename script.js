@@ -14,7 +14,9 @@ let round = 0
 function getComputerChoice() {
     let randomNumber = Math.random();
     if (randomNumber >= 0 && randomNumber < 0.33){
-        document.getElementById("imgid").src="icons/rock.png";    
+        document.getElementById("imgid").src="icons/rock.png";
+        document.getElementById("imgid").width = "200";
+        document.getElementById("imgid").width = "180";    
         return "rock"
     }
 
