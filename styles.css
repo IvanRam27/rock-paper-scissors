@@ -40,12 +40,14 @@ button {
     
 }
 
-#imgid {
+#computerChoice {
     background-color: whitesmoke;
     height: 250px;
     width: 250px;
     border: 2px solid black;
     border-radius: 15px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   
 }

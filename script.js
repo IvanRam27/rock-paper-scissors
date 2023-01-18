@@ -14,18 +14,29 @@ let round = 0
 function getComputerChoice() {
     let randomNumber = Math.random();
     if (randomNumber >= 0 && randomNumber < 0.33){
-        document.getElementById("imgid").src="icons/rock.png";
-        document.getElementById("imgid").width = "200";
-        document.getElementById("imgid").width = "180";    
+        var icon = document.createElement("img")
+        icon.setAttribute("height", "180px");
+        icon.setAttribute("width", "200px");
+        document.getElementById("computerChoice").appendChild(icon);
+        icon.src = "icons/rock.png";
+        
         return "rock"
     }
 
     if (randomNumber >= 0.33 && randomNumber < 0.66){
-        document.getElementById("imgid").src="icons/paper.png"
+        var icon = document.createElement("img")
+        icon.setAttribute("height", "180px");
+        icon.setAttribute("width", "200px");
+        document.getElementById("computerChoice").appendChild(icon);
+        icon.src = "icons/paper.png";
         return "paper"
     }
 
-    document.getElementById("imgid").src="icons/scissors.png"
+    var icon = document.createElement("img")
+    icon.setAttribute("height", "180px");
+    icon.setAttribute("width", "200px");
+    document.getElementById("computerChoice").appendChild(icon);
+    icon.src = "icons/scissors.png";
     return "scissors"
 }
 
@@ -83,11 +94,19 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   // and for each one we add a 'click' listener, and a function to play a round based on button selection    
     button.addEventListener('click', function() {
+       
+        let computerChoice = document.getElementById("computerChoice")
+        while (computerChoice.firstChild){
+        computerChoice.removeChild(computerChoice.firstChild)
+        }
+
         const result = document.querySelector('#result')
         result.textContent = playRound(button.id)
         const scoreStatus = document.querySelector('#scoreStatus')
         scoreStatus.textContent = gameScore(result.textContent)
         if (round === 5) {
+           
+
             if(playerScore > computerScore)
             scoreStatus.textContent = "You win the game! The final score is " + playerScore + "-" + computerScore + ". Click a button to play again"
     
