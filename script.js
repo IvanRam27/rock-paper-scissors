@@ -95,7 +95,7 @@ buttons.forEach((button) => {
   // and for each one we add a 'click' listener, and a function to play a round based on button selection    
     button.addEventListener('click', function() {
        
-        let computerChoice = document.getElementById("computerChoice")
+        let computerChoice = document.getElementById("computerChoice")  // check if there's an image inside computer choice from previous round, and removes it
         while (computerChoice.firstChild){
         computerChoice.removeChild(computerChoice.firstChild)
         }

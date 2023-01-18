@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Verdana, Tahoma, sans-serif;
     align-items: center;
-    
+    background-color: whitesmoke;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
     display: flex;
     justify-content:center;
     text-align: center;
-    padding: 50px;
+    padding: 100px;
     
 }
 
@@ -50,4 +50,26 @@ button {
     align-items: center;
     justify-content: center;
   
+}
+
+#result {
+    background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    padding: 30px;
+    padding-left: auto;
+    text-align: center;
+    font-weight: bolder;   
+}
+
+#scoreStatus {
+    background-color: whitesmoke;
+    color: black;
+    margin: 0;
+    padding: 50px;
+    font-size: 50px;
+    padding-left: auto;
+    text-align: center;
+    font-weight: bolder; 
+
 }
